@@ -16,13 +16,28 @@ const complaintRoutes = require("./routes/complaintRoutes");
 
 const app = express();
 
-const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 const corsOptions = {
-  origin: CLIENT_URL,
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      'http://localhost:5173',
+      'https://elearningplatform-hazel.vercel.app'
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 };
 
 app.use(cors(corsOptions));
+
+// Pre-flight support for all routes
+app.options('*', cors(corsOptions));
+
 app.use(express.json());
 
 // Serve uploaded files
