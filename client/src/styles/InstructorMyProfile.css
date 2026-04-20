@@ -1,0 +1,431 @@
+/* ========================================
+   Instructor My Profile Page
+   ======================================== */
+
+.imp-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #f9fafb;
+  min-height: 100vh;
+  padding: 40px 24px 40px 24px;
+}
+
+/* Header Section */
+.imp-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.imp-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.imp-sub {
+  color: #6b7280;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+/* Success Message */
+.imp-success {
+  background: #d1fae5;
+  border: 1px solid #6ee7b7;
+  color: #047857;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Error Message */
+.imp-error {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 20px;
+  font-weight: 500;
+}
+
+/* Loading State */
+.imp-loading {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+/* Main Container */
+.imp-container {
+  display: grid;
+  gap: 32px;
+}
+
+/* Profile Picture Section */
+.imp-picture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.imp-picture-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  border: 3px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.imp-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imp-picture-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 4rem;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+.imp-upload-section {
+  text-align: center;
+}
+
+.imp-upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.imp-upload-label:hover {
+  background: #4338ca;
+}
+
+.imp-file-input {
+  display: none;
+}
+
+/* Section Styling */
+.imp-section {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.imp-section h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin: 0 0 24px 0;
+  font-weight: 600;
+}
+
+.imp-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.imp-section-header h2 {
+  margin: 0;
+}
+
+.imp-edit-btn {
+  padding: 10px 20px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.imp-edit-btn:hover {
+  background: #4338ca;
+}
+
+/* Field Styling */
+.imp-field {
+  margin-bottom: 24px;
+}
+
+.imp-field:last-child {
+  margin-bottom: 0;
+}
+
+.imp-field label {
+  display: block;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.imp-field small {
+  display: block;
+  color: #9ca3af;
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
+
+.imp-input,
+.imp-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.imp-input:focus,
+.imp-textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.imp-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.imp-value {
+  color: #374151;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.imp-value.imp-readonly {
+  color: #6b7280;
+}
+
+.imp-link {
+  color: #4f46e5;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.imp-link:hover {
+  text-decoration: underline;
+}
+
+/* Tags Styling */
+.imp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+.imp-tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #93c5fd;
+}
+
+.imp-tag-category {
+  background: #fce7f3;
+  color: #be185d;
+  border-color: #fbcfe8;
+}
+
+/* Stats Grid */
+.imp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.imp-stat-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e0f2fe;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.imp-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.imp-stat-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.imp-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+/* Action Buttons */
+.imp-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+
+.imp-save-btn,
+.imp-cancel-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.imp-save-btn {
+  background: #10b981;
+  color: white;
+}
+
+.imp-save-btn:hover {
+  background: #059669;
+}
+
+.imp-save-btn:active {
+  transform: scale(0.98);
+}
+
+.imp-cancel-btn {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.imp-cancel-btn:hover {
+  background: #d1d5db;
+}
+
+.imp-cancel-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .imp-page {
+    padding: 16px;
+  }
+
+  .imp-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .imp-section {
+    padding: 20px;
+  }
+
+  .imp-picture-wrapper {
+    width: 140px;
+    height: 140px;
+    border-width: 2px;
+  }
+
+  .imp-picture-placeholder {
+    font-size: 3rem;
+  }
+
+  .imp-actions {
+    flex-direction: column;
+  }
+
+  .imp-save-btn,
+  .imp-cancel-btn {
+    width: 100%;
+  }
+
+  .imp-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .imp-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .imp-edit-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .imp-page {
+    padding: 12px;
+  }
+
+  .imp-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .imp-section {
+    padding: 16px;
+  }
+
+  .imp-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+
+  .imp-field {
+    margin-bottom: 16px;
+  }
+
+  .imp-input,
+  .imp-textarea {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .imp-stat-value {
+    font-size: 1.5rem;
+  }
+
+  .imp-save-btn,
+  .imp-cancel-btn {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+}

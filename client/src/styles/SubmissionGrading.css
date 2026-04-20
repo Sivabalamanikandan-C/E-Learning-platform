@@ -1,0 +1,396 @@
+.submission-grading-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grading-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  text-align: center;
+}
+
+.grading-header h2 {
+  margin: 0 0 8px 0;
+  color: #000000;
+  font-size: 28px;
+}
+
+.assignment-info {
+  margin: 0;
+  color: black;
+  font-size: 14px;
+}
+
+.alert {
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.alert-error {
+  background-color: #fee;
+  color: #c33;
+  border-left: 4px solid #c33;
+}
+
+.alert-success {
+  background-color: #efe;
+  color: #3c3;
+  border-left: 4px solid #3c3;
+}
+
+.submission-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  color: #000000;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  color: #000000;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.stat-value.pending {
+  color: #f57c00;
+}
+
+.stat-value.graded {
+  color: #388e3c;
+}
+
+/* .grading-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 20px;
+} */
+
+@media (max-width: 1024px) {
+  .grading-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.submissions-panel {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  margin-bottom: 2%;
+}
+
+.submissions-panel h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.submissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.submission-item {
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submission-item:hover {
+  background: #f8f9fa;
+  border-color: #667eea;
+}
+
+.submission-item.selected {
+  background: #e8eaf6;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.submission-info {
+  flex: 1;
+}
+
+
+.student-name {
+  margin: 0 0 4px 0;
+  color: #000000;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.student-email {
+  margin: 0 0 4px 0;
+  color: #000000;
+  font-size: 12px;
+}
+
+.submission-date {
+  margin: 0;
+  color: #000000;
+  font-size: 11px;
+}
+
+.submission-status {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  margin-top: 8px;
+}
+
+.badge-graded {
+  background: #c8e6c9;
+  color: #2e7d32;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.badge-late {
+  background: #ffe0b2;
+  color: #e65100;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.badge-submitted {
+  background: #bbdefb;
+  color: #1565c0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.marks-badge {
+  background: #f3e5f5;
+  color: #6a1b9a;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.no-submissions {
+  text-align: center;
+  color: #000000;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.grading-panel {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  font-size: 18px;
+}
+
+.grading-panel h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.submission-detail {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.submission-detail h4 {
+  margin: 0 0 4px 0;
+  color: #050404;
+  font-size: 15px;
+}
+
+.email {
+  margin: 0 0 16px 0;
+  color: #000000;
+  font-size: 17px;
+}
+
+.submission-content {
+  margin: 16px 0;
+}
+
+.text-submission,
+.file-submission {
+  margin-bottom: 16px;
+}
+
+.text-submission h5,
+.file-submission h5 {
+  margin: 0 0 8px 0;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.text-content {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.file-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #e3f2fd;
+  color: #1976d2;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.file-link:hover {
+  background: #bbdefb;
+}
+
+.submission-meta {
+  font-size: 15px;
+  color: #666;
+}
+
+.late-badge {
+  background: #ffe0b2;
+  color: #e65100;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.grading-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #000000;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0231ff;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background-color: #f5f5f5;
+  color: #000000;
+  cursor: not-allowed;
+  border-color: #ddd;
+}
+
+.form-group input:disabled:focus,
+.form-group textarea:disabled:focus {
+  border-color: #ddd;
+  box-shadow: none;
+}
+
+.btn-grade {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+  align-self: flex-start;
+}
+
+.btn-grade:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-grade:disabled {
+  background: linear-gradient(135deg, #ccc 0%, #999 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+.btn-grade:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #999;
+  font-size: 16px;
+  text-align: center;
+}

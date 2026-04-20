@@ -1,0 +1,98 @@
+Insert Exercises
+1. Create a collection called students and insert one document with the fields:
+
+name, age, course, email.
+
+Answer:
+
+db.students.insertOne({
+  name: "Arun",
+  age: 21,
+  course: "Python",
+  email: "arun@gmail.com"
+});
+
+2. Insert three student documents at once into the students collection with different values.
+
+Answer:
+
+db.students.insertMany([
+  {
+    name: "Priya",
+    age: 22,
+    course: "Java",
+    email: "priya@gmail.com"
+  },
+  {
+    name: "Karthik",
+    age: 20,
+    course: "Python",
+    email: "karthik@gmail.com"
+  },
+  {
+    name: "Meena",
+    age: 17,
+    course: "Web Development",
+    email: "meena@gmail.com"
+  }
+]);
+
+Find Exercises
+3. Retrieve all documents from the students collection.
+
+Answer:
+
+db.students.find();
+
+4. Find students whose course is "Python".
+
+Answer:
+
+db.students.find({ course: "Python" });
+
+5. Find students whose age is greater than 20.
+
+Answer:
+
+db.students.find({ age: { $gt: 20 } });
+
+Update Exercises
+6. Update the course of a student named "Arun" to "Full Stack Development".
+
+Answer:
+
+db.students.updateOne(
+  { name: "Arun" },
+  { $set: { course: "Full Stack Development" } }
+);
+
+7. Increase the age of all students by 1 year.
+
+Answer:
+
+db.students.updateMany(
+  {},
+  { $inc: { age: 1 } }
+);
+
+8. Add a new field status: "active" to all documents in the students collection.
+
+Answer:
+
+db.students.updateMany(
+  {},
+  { $set: { status: "active" } }
+);
+
+Delete Exercises
+9. Delete the student whose email is "test@gmail.com".
+
+Answer:
+
+db.students.deleteOne({ email: "test@gmail.com" });
+
+10. Delete all students whose age is less than 18.
+
+Answer:
+
+db.students.deleteMany({ age: { $lt: 18 } });
