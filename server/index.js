@@ -35,8 +35,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Pre-flight support for all routes
-// app.options('*', cors(corsOptions)); // Removed to avoid path-to-regexp error
+
 
 app.use(express.json());
 
