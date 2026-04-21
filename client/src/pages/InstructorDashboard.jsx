@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import api from "../services/api";
 
 export default function InstructorDashboard() {
   const navigate = useNavigate();
@@ -16,14 +16,11 @@ export default function InstructorDashboard() {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/instructor/dashboard",
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          }
-        );
+        const res = await api.get("/api/instructor/dashboard", {
+          headers: {
+            Authorization: `Bearer ${auth?.token || localStorage.getItem("token")}`,
+          },
+        });
         setData(res.data);
       } catch (err) {
         logout(); // token invalid or unauthorized
@@ -31,7 +28,7 @@ export default function InstructorDashboard() {
     };
 
     fetchDashboard();
-  }, []);
+  }, [auth?.token]);
 
   if (!data) {
     return <p className="p-8">Loading dashboard...</p>;

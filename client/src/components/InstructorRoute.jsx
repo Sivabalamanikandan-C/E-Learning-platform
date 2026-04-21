@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../services/api";
 
 export default function InstructorRoute({ children }) {
   const auth = useAuth();
@@ -17,8 +17,7 @@ export default function InstructorRoute({ children }) {
       }
 
       try {
-        // verify token with a simple auth check
-        await axios.get("http://localhost:5000/api/auth/me", {
+        await api.get("/api/auth/me", {
           headers: { Authorization: `Bearer ${auth.token}` },
         });
         if (isMounted) setChecking(false);
@@ -32,7 +31,7 @@ export default function InstructorRoute({ children }) {
     return () => {
       isMounted = false;
     };
-  }, [auth]);
+  }, [auth?.role, auth?.token]);
 
   if (checking) return null;
 
